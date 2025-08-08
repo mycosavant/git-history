@@ -2,7 +2,7 @@
   "name": "git-file-history",
   "displayName": "Git File History",
   "description": "Modern, fast and intuitive tool for browsing the history and files in any git repository",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "repository": "pomber/git-history",
   "publisher": "pomber",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "show"
   ],
   "engines": {
-    "vscode": "^1.30.2"
+    "vscode": "^1.74.0"
   },
   "categories": [
     "Other"
@@ -40,19 +40,22 @@
   "scripts": {
     "build-site": "cd .. && cross-env PUBLIC_URL=. REACT_APP_GIT_PROVIDER=vscode yarn build && rm -fr vscode-ext/site/ && cp -r build/ vscode-ext/site/",
     "build": " yarn build-site",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test",
+    "test": "node test/index.js",
     "vscode:prepublish": "yarn build"
   },
   "devDependencies": {
-    "@types/mocha": "^2.2.42",
-    "@types/node": "^10.12.21",
-    "cross-env": "^5.2.0",
-    "eslint": "^5.13.0",
-    "typescript": "^3.3.1",
-    "vscode": "^1.1.28"
+    "@types/mocha": "^10.0.6",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.74.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.56.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "execa": "^1.0.0"
+    "execa": "^8.0.1"
   }
 }
